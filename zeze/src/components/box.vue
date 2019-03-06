@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./base.css" />
-    <link rel="stylesheet" href="./index.css" />
-
-  </head>
-  <body>
-    <div class="body-container">
-      <div class="box-container " v-for="(item,index) in list":key="index">
+<template>
+  <div class="body-container">
+      <div class="box-container " >
         <div class="box-detail">
           <div class="work-box "><span>今日计划开工20项</span> <span>今日计划完工20项</span></div>
          
@@ -41,16 +30,99 @@
         </div>
         <div class="sanjiao"></div> 
       </div>
-    
-    </div>
-  </body>
-  <!-- 问题：span设置的浮动，日期区域清除浮动后，用p标签，11月2日在下方显示？，用span标签，在略上方显示呢？ -->
-  <script>
-    
-  
-  </script>
+  </div>
+</template>
 
-  <script src="./index.js"></script>
-  <!-- <script src="./jquery-1.12.4.js"></script> -->
-  <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-</html>
+<script>
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+* {
+    box-sizing: border-box;
+}
+.body-container{
+    height:100%;
+    width:100%;
+   
+}
+.box-container{
+  height:200px;
+  width:350px;
+  color:red;
+  
+  /* border:1px solid red; */
+  position: relative;
+  /* overflow: hidden; */
+}
+.box-detail{
+    background-color: blanchedalmond;
+    border-radius: 5px 5px 0 0;
+      padding-left:12px;  
+      padding-top:8px; 
+    height:85%; 
+     width:100%; 
+     /* overflow: hidden; */
+    
+} 
+.work-box{
+    width:100%;
+   
+}
+.work-box span{
+    display: block;
+    width:50%;
+    float:left;
+}
+
+
+table{
+    border-collapse: collapse;
+    margin-left: 4px;
+    text-align: center;
+    /* margin-right:2px; */
+     width:90%;
+}
+td{
+    border:1px solid #ccc;
+    /* width:30%; */
+}
+.line{
+    height:2px;
+    width:95%;
+    background: #ccc;
+     overflow: hidden; 
+}
+.date{
+    height:15%;
+    width:100%;
+    background: gray;
+    overflow: hidden;
+    text-align: center;
+    
+   
+}
+.sanjiao{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid gray;
+     position: absolute;
+    left:50%; 
+  }
+   /* 问题：span设置的浮动，日期区域清除浮动后，用p标签，11月2日在下方显示？，用span标签，在略上方显示呢？ */
+</style>
+  
+ 
+
+  
+
